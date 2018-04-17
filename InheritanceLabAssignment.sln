@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InheritanceLabAssignment", "InheritanceLabAssignment\InheritanceLabAssignment.csproj", "{2B7A9AFE-743F-4EC5-A37D-288F9C3B2AC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarLib", "CarLib\CarLib.csproj", "{FE02BC8B-BFE6-4CEA-9B01-0EA349FA75D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B7A9AFE-743F-4EC5-A37D-288F9C3B2AC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B7A9AFE-743F-4EC5-A37D-288F9C3B2AC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B7A9AFE-743F-4EC5-A37D-288F9C3B2AC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B7A9AFE-743F-4EC5-A37D-288F9C3B2AC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE02BC8B-BFE6-4CEA-9B01-0EA349FA75D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE02BC8B-BFE6-4CEA-9B01-0EA349FA75D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE02BC8B-BFE6-4CEA-9B01-0EA349FA75D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE02BC8B-BFE6-4CEA-9B01-0EA349FA75D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE0227D8-7181-4AA5-A17E-BDC03D499E58}
+	EndGlobalSection
+EndGlobal
