@@ -48,9 +48,13 @@ namespace CarLib
             set { _customerID = value; }
         }
         /*-----Methods-----*/
-        private void LowerPriceBy(decimal percent)
+        public void LowerPriceBy(decimal percent)
         {
             _price -= percent * Price / 100;
+        }
+        public void ChangePrice(decimal newPrice)
+        {
+            _price = newPrice;
         }
     }
 }

@@ -39,6 +39,7 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnDisplayCars = new System.Windows.Forms.Button();
             this.btnMostExpensiveCar = new System.Windows.Forms.Button();
             this.btnFilters = new System.Windows.Forms.Button();
@@ -50,7 +51,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cboType = new System.Windows.Forms.ComboBox();
             this.htmlToolTip1 = new MetroFramework.Drawing.Html.HtmlToolTip();
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnLeastExpensive = new System.Windows.Forms.Button();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtNewPrice = new System.Windows.Forms.TextBox();
+            this.btnChangePrice = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listView1
@@ -71,7 +77,7 @@
             this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(14, 79);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(979, 203);
+            this.listView1.Size = new System.Drawing.Size(983, 216);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -134,14 +140,18 @@
             this.columnHeader10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader10.Width = 100;
             // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Type";
+            // 
             // btnDisplayCars
             // 
-            this.btnDisplayCars.BackColor = System.Drawing.Color.Coral;
+            this.btnDisplayCars.BackColor = System.Drawing.Color.DarkOrange;
             this.btnDisplayCars.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDisplayCars.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDisplayCars.Location = new System.Drawing.Point(1010, 79);
+            this.btnDisplayCars.Location = new System.Drawing.Point(1027, 79);
             this.btnDisplayCars.Name = "btnDisplayCars";
-            this.btnDisplayCars.Size = new System.Drawing.Size(129, 47);
+            this.btnDisplayCars.Size = new System.Drawing.Size(129, 68);
             this.btnDisplayCars.TabIndex = 1;
             this.btnDisplayCars.Text = "Display Cars";
             this.btnDisplayCars.UseVisualStyleBackColor = false;
@@ -149,12 +159,12 @@
             // 
             // btnMostExpensiveCar
             // 
-            this.btnMostExpensiveCar.BackColor = System.Drawing.Color.Coral;
+            this.btnMostExpensiveCar.BackColor = System.Drawing.Color.DarkOrange;
             this.btnMostExpensiveCar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMostExpensiveCar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnMostExpensiveCar.Location = new System.Drawing.Point(1010, 132);
+            this.btnMostExpensiveCar.Location = new System.Drawing.Point(1027, 153);
             this.btnMostExpensiveCar.Name = "btnMostExpensiveCar";
-            this.btnMostExpensiveCar.Size = new System.Drawing.Size(129, 47);
+            this.btnMostExpensiveCar.Size = new System.Drawing.Size(129, 68);
             this.btnMostExpensiveCar.TabIndex = 2;
             this.btnMostExpensiveCar.Text = "Luxurious Car";
             this.btnMostExpensiveCar.UseVisualStyleBackColor = false;
@@ -162,10 +172,10 @@
             // 
             // btnFilters
             // 
-            this.btnFilters.BackColor = System.Drawing.Color.Coral;
+            this.btnFilters.BackColor = System.Drawing.Color.DarkOrange;
             this.btnFilters.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFilters.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnFilters.Location = new System.Drawing.Point(78, 357);
+            this.btnFilters.Location = new System.Drawing.Point(14, 411);
             this.btnFilters.Name = "btnFilters";
             this.btnFilters.Size = new System.Drawing.Size(224, 47);
             this.btnFilters.TabIndex = 3;
@@ -176,7 +186,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(75, 285);
+            this.label1.Location = new System.Drawing.Point(10, 324);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 23);
             this.label1.TabIndex = 4;
@@ -185,7 +195,7 @@
             // cboMake
             // 
             this.cboMake.FormattingEnabled = true;
-            this.cboMake.Location = new System.Drawing.Point(78, 307);
+            this.cboMake.Location = new System.Drawing.Point(14, 361);
             this.cboMake.Name = "cboMake";
             this.cboMake.Size = new System.Drawing.Size(224, 31);
             this.cboMake.TabIndex = 5;
@@ -194,7 +204,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(75, 285);
+            this.label2.Location = new System.Drawing.Point(10, 324);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 23);
             this.label2.TabIndex = 6;
@@ -204,7 +214,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(331, 285);
+            this.label3.Location = new System.Drawing.Point(266, 324);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 23);
             this.label3.TabIndex = 8;
@@ -213,7 +223,7 @@
             // cboCustomerID
             // 
             this.cboCustomerID.FormattingEnabled = true;
-            this.cboCustomerID.Location = new System.Drawing.Point(334, 307);
+            this.cboCustomerID.Location = new System.Drawing.Point(270, 361);
             this.cboCustomerID.Name = "cboCustomerID";
             this.cboCustomerID.Size = new System.Drawing.Size(224, 31);
             this.cboCustomerID.TabIndex = 7;
@@ -222,7 +232,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(581, 285);
+            this.label4.Location = new System.Drawing.Point(516, 324);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 23);
             this.label4.TabIndex = 10;
@@ -231,7 +241,7 @@
             // cboType
             // 
             this.cboType.FormattingEnabled = true;
-            this.cboType.Location = new System.Drawing.Point(584, 307);
+            this.cboType.Location = new System.Drawing.Point(520, 361);
             this.cboType.Name = "cboType";
             this.cboType.Size = new System.Drawing.Size(224, 31);
             this.cboType.TabIndex = 9;
@@ -240,15 +250,83 @@
             // 
             this.htmlToolTip1.OwnerDraw = true;
             // 
-            // columnHeader11
+            // btnLeastExpensive
             // 
-            this.columnHeader11.Text = "Type";
+            this.btnLeastExpensive.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnLeastExpensive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLeastExpensive.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLeastExpensive.Location = new System.Drawing.Point(1027, 227);
+            this.btnLeastExpensive.Name = "btnLeastExpensive";
+            this.btnLeastExpensive.Size = new System.Drawing.Size(129, 68);
+            this.btnLeastExpensive.TabIndex = 11;
+            this.btnLeastExpensive.Text = "Cheap";
+            this.btnLeastExpensive.UseVisualStyleBackColor = false;
+            this.btnLeastExpensive.Click += new System.EventHandler(this.btnLeastExpensive_Click);
+            // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lblTotalPrice.Location = new System.Drawing.Point(897, 362);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(84, 28);
+            this.lblTotalPrice.TabIndex = 12;
+            this.lblTotalPrice.Text = "label5";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label5.Location = new System.Drawing.Point(769, 362);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(137, 28);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Total Price:";
+            // 
+            // txtNewPrice
+            // 
+            this.txtNewPrice.Location = new System.Drawing.Point(389, 420);
+            this.txtNewPrice.Name = "txtNewPrice";
+            this.txtNewPrice.Size = new System.Drawing.Size(189, 31);
+            this.txtNewPrice.TabIndex = 14;
+            // 
+            // btnChangePrice
+            // 
+            this.btnChangePrice.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnChangePrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePrice.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnChangePrice.Location = new System.Drawing.Point(629, 413);
+            this.btnChangePrice.Name = "btnChangePrice";
+            this.btnChangePrice.Size = new System.Drawing.Size(368, 43);
+            this.btnChangePrice.TabIndex = 15;
+            this.btnChangePrice.Text = "Change Price of Selected Car";
+            this.btnChangePrice.UseVisualStyleBackColor = false;
+            this.btnChangePrice.Click += new System.EventHandler(this.btnChangePrice_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DarkOrange;
+            this.label6.Location = new System.Drawing.Point(266, 423);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(139, 28);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Enter Price:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1168, 435);
+            this.ClientSize = new System.Drawing.Size(1193, 510);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnChangePrice);
+            this.Controls.Add(this.txtNewPrice);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblTotalPrice);
+            this.Controls.Add(this.btnLeastExpensive);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cboType);
             this.Controls.Add(this.label3);
@@ -297,6 +375,12 @@
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private MetroFramework.Drawing.Html.HtmlToolTip htmlToolTip1;
         private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.Button btnLeastExpensive;
+        private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtNewPrice;
+        private System.Windows.Forms.Button btnChangePrice;
+        private System.Windows.Forms.Label label6;
     }
 }
 

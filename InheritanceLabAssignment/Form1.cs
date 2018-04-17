@@ -16,6 +16,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CarLib;
+using MetroFramework;
 
 namespace InheritanceLabAssignment
 {
@@ -28,6 +29,7 @@ namespace InheritanceLabAssignment
         List<Car> pCars = new List<Car>();
         List<SportCar> pSportCars = new List<SportCar>();
         List<Truck> pTrucks = new List<Truck>();
+        List<Car> filter3 = new List<Car>();
         //**************************FORM 1***********************************
         public Form1()
         {
@@ -47,6 +49,10 @@ namespace InheritanceLabAssignment
             SortCarList(rand, customerList, carList, pCars, pSportCars, pTrucks);
             //populate comboboxes
             PopulateComboBoxes(carList);
+            //empty label
+            lblTotalPrice.Text = String.Empty;
+            //setting filter3 to carList
+            filter3 = carList;
         }
         //**************************METHODS**********************************
         //methods to populate the sublists
@@ -305,7 +311,7 @@ namespace InheritanceLabAssignment
                 listView1.Items.Add(lvi);
             }
         }
-        //method to get the most expensive car is Car object list
+        //method to get the most expensive car in Car object list
         private Car GetMostExpensiveCar(List<Car> cList)
         {
             //set mostExpensive car as the first in the list
@@ -319,6 +325,21 @@ namespace InheritanceLabAssignment
                 }
             }
             return mostExpensive;
+        }
+        //method to get the least expensive car in Car object list
+        private Car GetLeastExpensiveCar(List<Car> cList)
+        {
+            //set mostExpensive car as the first in the list
+            Car leastExpensive = cList[0];
+            //for loop to compare mostExpensive car to all Cars in list
+            for (int i = 0; i < cList.Count; i++)
+            {
+                if (cList[i].Price < leastExpensive.Price)
+                {
+                    leastExpensive = cList[i];
+                }
+            }
+            return leastExpensive;
         }
         //method to filter Car objects based on Make
         private List<Car> GetCarsByMake(string make, List<Car> cList)
@@ -351,6 +372,8 @@ namespace InheritanceLabAssignment
         //method to filter Car objects based on Type
         private List<Car> GetCarsByType(string type, List<Car> filter2)
         {
+            //decimal to hold Car object price
+            decimal totalPrice = 0;
             //list of Cars to hold objects filtered by Type
             List<Car> filterType = new List<Car>();
             for (int i = 0; i < filter2.Count; i++)
@@ -358,8 +381,11 @@ namespace InheritanceLabAssignment
                 if (filter2[i].GetType().Name == type)
                 {
                     filterType.Add(filter2[i]);
+                    totalPrice += filter2[i].Price;
                 }
             }
+            //Print total price on label
+            lblTotalPrice.Text = totalPrice.ToString("c");
             return filterType;
         }
         //**************************EVENTS***********************************
@@ -385,8 +411,6 @@ namespace InheritanceLabAssignment
             List<Car> filter1 = new List<Car>();
             //filter by CustomerID
             List<Car> filter2 = new List<Car>();
-            //filter by Type
-            List<Car> filter3 = new List<Car>();
             //conditional statements to call methods according to options
             //in comboboxes
             if(cboMake.Text == String.Empty)
@@ -407,6 +431,43 @@ namespace InheritanceLabAssignment
             cboMake.SelectedIndex = -1;
             cboCustomerID.SelectedIndex = -1;
             cboType.SelectedIndex = -1;
+        }
+        private void btnLeastExpensive_Click(object sender, EventArgs e)
+        {
+            //list that will hold the least expensive Car object
+            //although it's only one item, the DisplayCars method gets
+            //a List<Car> and a parameter
+            List<Car> leastExpensiveList = new List<Car>();
+            //call method GetLeastExpensiveCar and add return to list
+            leastExpensiveList.Add(GetLeastExpensiveCar(carList));
+            //Display most expensive Car
+            DisplayCars(leastExpensiveList);
+        }
+        private void btnChangePrice_Click(object sender, EventArgs e)
+        {
+            if (txtNewPrice.Text == String.Empty)
+            {
+                MetroFramework.MetroMessageBox.Show(this, "You must enter a price!!!!!", "Warning!", MessageBoxButtons.OK ,MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if(listView1.SelectedIndices[0] != -1)
+                {
+                    //get index from selected item in listview
+                    int index = listView1.SelectedIndices[0];
+                    //get price from textbox
+                    decimal newPrice = Convert.ToDecimal(txtNewPrice.Text);
+                    //update price from selected Car
+                    filter3[index].ChangePrice(newPrice);
+                    //display list
+                    DisplayCars(filter3);
+                }
+                else
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "You must select a Car!", "Warning!", MessageBoxButtons.OK ,MessageBoxIcon.Warning);
+                }
+            }
+            
         }
     }
 }
